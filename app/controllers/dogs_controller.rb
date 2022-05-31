@@ -1,5 +1,5 @@
 class DogsController < ApplicationController
-  before_action :set_dog, only: ["show"]
+  before_action :set_dog, only: ["show", "destroy"]
 
   def new
     @dog = Dog.new
@@ -10,7 +10,9 @@ class DogsController < ApplicationController
   end
 
   def show
+  end
 
+  def destroy
   end
 
   def create

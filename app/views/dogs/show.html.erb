@@ -1,21 +1,32 @@
 <div class="container">
   <div class="dog-header">
     <h1><%= @dog.name %></h1>
-    <%= link_to @dog.location, '/#map' %>, <%= @dog.breed %>
+    <h4><%= @dog.breed %>, <%= @dog.location %></h4>
   </div>
   <div class="dog-details">
     <div class="profile-left">
       <%= image_tag @dog.photo_url, class: "dog-profile-pic" %>
-      <h4><%= @dog.description %></h4>
-      <div class="dog-owner">
-        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-        <%= @dog.user.first_name %>
+      <div class="profile-description">
+        <h4>Description</h4>
+        <p><%= @dog.description %></p>
+        <span class='dog-tags'>Friendly</span>
+        <span class='dog-tags'>Deaf</span>
+        <span class='dog-tags'>Energetic</span>
+        <span class='dog-tags'>Anxious</span>
+        <span class='dog-tags'>Potty-trained</span>
+        <span class='dog-tags'>Sheds hair</span>
+        <h4>Owner</h4>
+        <div class="dog-owner">
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= @dog.user.first_name %>
+        </div>
       </div>
     </div>
     <div class="profile-right">
     </div>
   </div>
   <div id="map">
+    <h3><%= @dog.name %> is based in <%=@dog.location%></h3>
     <%= @dog.location %>
   </div>
 </div>

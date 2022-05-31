@@ -23,6 +23,15 @@
       </div>
     </div>
     <div class="profile-right">
+
+    <%= link_to edit_dog_path(@dog) do %>
+      <i class="fa-solid fa-pen-to-square"></i>
+    <% end %>
+
+    <%= link_to dog_path(@dog), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+      <i class="fa-solid fa-trash-can"></i>
+    <% end %>
+
     </div>
   </div>
   <div id="map">

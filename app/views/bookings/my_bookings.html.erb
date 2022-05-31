@@ -13,6 +13,9 @@
         <p><%= book.dog.description %></p>
         <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class:"avatar-bordered" %>
         <%= book.dog.user.first_name %>
+        <%= link_to booking_path(book), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+          <i class="fa-solid fa-trash-can"></i>
+        <% end %>
       </div>
       .
     </div>

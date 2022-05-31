@@ -1,0 +1,11 @@
+<div class="container pt-5">
+  <%= simple_form_for @dog do |f| %>
+    <%= f.input :name %>
+    <%= f.input :breed %>
+    <%= f.input :location %>
+    <%= f.input :description %>
+    <%= f.input :photo_url %>
+    <%= f.input :rate %>
+    <%= f.button :submit %>
+  <% end %>
+</div>

@@ -18,10 +18,7 @@
         <div class="card-info-right">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", id:"dog-owner"  %>
           <%= book.dog.user.first_name %>
-          <%= link_to "Delete",
-            booking_path(book),
-            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-          %>
+            <h4><%= book.id %></h4>
         </div>
       </div>
       .

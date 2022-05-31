@@ -1,0 +1,59 @@
+.dog-profile-pic{
+  border-radius:10px;
+  width: 100%;
+}
+
+.dog-details{
+  display: grid;
+  grid-template-columns: 1fr 1fr
+}
+.profile-right{
+  width: 50%;
+}
+
+#map{
+  background-color: #eee;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 50px 0;
+}
+
+.profile-description{
+  background: #fff;
+  padding: 40px;
+  margin-top: -16px;
+  border-radius: 0 0 10px 10px;
+  h4{
+    margin-top: 16px;
+  }
+}
+
+.dog-tags{
+  background-color: rgb(255, 254, 212);
+  border-radius: 20px;
+  padding: 6px 20px;
+  display: inline-block;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cards {
+    grid-template-columns: 1fr ;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr 1fr  1fr;
+  }
+}

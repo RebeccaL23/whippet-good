@@ -1,5 +1,4 @@
 class DogsController < ApplicationController
-
   def new
     @dog = Dog.new
   end
@@ -16,6 +15,9 @@ class DogsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def delete
   end
 
   private

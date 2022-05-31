@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_dog, only: %i[new create destroy]
+  before_action :set_dog, only: %i[new create]
 
   def new
     @booking = Booking.new

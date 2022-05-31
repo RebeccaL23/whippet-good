@@ -22,6 +22,10 @@ class BookingsController < ApplicationController
     redirect_to my_bookings_path, status: :see_other
   end
 
+  def my_bookings
+    @bookings = Booking.all
+  end
+
   private
 
   def booking_params

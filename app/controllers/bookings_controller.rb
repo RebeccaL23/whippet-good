@@ -2,13 +2,11 @@ class BookingsController < ApplicationController
   before_action :set_dog, only: %i[new create destroy]
 
   def new
-    # @dog = Dog.find(params[:dog_id])
     @booking = Booking.new
   end
 
   def create
     @booking = Booking.new(booking_params)
-    # @dog = Dog.find(params[:dog_id])
     @booking.dog = @dog
     @booking.user = current_user
     if @booking.save

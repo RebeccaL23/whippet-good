@@ -130,10 +130,10 @@ dog6.user = user3
 dog6.save!
 
 dog7 = Dog.new(
-  name: "Filipe",
-  breed: "Labrador",
+  name: "Filomena",
+  breed: "Cocker Spaniel",
   location: "Caracas",
-  photo_url: "https://images.unsplash.com/photo-1601950620185-f9c6a84b2c15?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjN8fGRvZ3xlbnwwfDJ8MHx8&auto=format&fit=crop&w=900&q=60",
+  photo_url: "https://images.unsplash.com/photo-1515597849219-88a19d5f13f9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y29ja2V3ciUyMHNwYW5pZWx8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60",
   rate: "8"
 )
 dog7.user = user3

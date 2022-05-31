@@ -10,8 +10,12 @@ class DogsController < ApplicationController
 
   def create
     @dog = Dog.new(dog_params)
-    @dog.user = User.last
-    @dog.save
+    @dog.user = current_user
+    if @dog.save
+      redirect_to dog_path(@dog.id), notice: 'You just added a dog'
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   private

@@ -10,7 +10,7 @@ class DogsController < ApplicationController
 
   def create
     @dog = Dog.new(dog_params)
-    @dog.user = User.last
+    @dog.user = current_user
     @dog.save
   end
 

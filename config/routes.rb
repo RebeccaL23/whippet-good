@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   resources :dogs do
     resources :bookings, only: [:new, :create]
   end
-
+  resources :bookings, only: [:destroy]
   get "my_bookings", to: "bookings#my_bookings", as: :my_bookings
 end

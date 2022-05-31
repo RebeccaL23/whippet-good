@@ -6,13 +6,23 @@
 
   <% @bookings.each do |book| %>
     <div class="card-product my-2">
-      <img src="<%= book.dog.photo_url %>" />
-      <div class="card-product-infos">
-        <h4><%= book.dog.name %></h4>
-        <h2><%= book.start %></h2>
-        <p><%= book.dog.description %></p>
-        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class:"avatar-bordered" %>
-        <%= book.dog.user.first_name %>
+      <%= link_to dog_path(book.dog) do %>
+        <img src="<%= book.dog.photo_url %>" />
+      <% end %>
+      <div class="card-product-infos d-flex justify-content-between align-items-center w-100">
+        <div class="card-info-left">
+          <h4><%= link_to book.dog.name, dog_path(book.dog) %></h4>
+          <h2><%= book.start %> until <%= book.end %></h2>
+          <p><%= book.dog.description %></p>
+        </div>
+        <div class="card-info-right">
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", id:"dog-owner"  %>
+          <%= book.dog.user.first_name %>
+          <%= link_to "Delete",
+            booking_path(book),
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+          %>
+        </div>
       </div>
       .
     </div>

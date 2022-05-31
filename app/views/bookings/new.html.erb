@@ -1,0 +1,7 @@
+<div class="container pt-5">
+  <%= simple_form_for [@dog, @booking] do |f| %>
+    <%= f.input :start, as: :date %>
+    <%= f.input :end, as: :date %>
+    <%= f.button :submit %>
+  <% end %>
+</div>

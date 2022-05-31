@@ -9,6 +9,5 @@ Rails.application.routes.draw do
     resources :bookings, only: %i[new create]
   end
   resources :bookings, only: %i[destroy] # does no need to be within dog scope to delete a bookmark
-  
   get "my_bookings", to: "bookings#my_bookings", as: :my_bookings
 end

@@ -1,0 +1,25 @@
+<div class="container">
+
+  <h1 class="text-center border-bottom py-2 mb-4">My Bookings</h1>
+
+
+
+  <% @bookings.each do |book| %>
+    <div class="card-product my-2">
+      <img src="<%= book.dog.photo_url %>" />
+      <div class="card-product-infos">
+        <h4><%= book.dog.name %></h4>
+        <h2><%= book.start %></h2>
+        <p><%= book.dog.description %></p>
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class:"avatar-bordered" %>
+        <%= book.dog.user.first_name %>
+      </div>
+      .
+    </div>
+  <% end %>
+
+
+
+
+
+</div>

@@ -10,10 +10,7 @@ class DogsController < ApplicationController
   end
 
   def show
-<<<<<<< HEAD
     @booking = Booking.new
-=======
->>>>>>> 779d2d81ccb56935fbd31cb73c3ef7fd9f3c40cb
   end
 
   def create

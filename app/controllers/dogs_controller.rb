@@ -1,5 +1,5 @@
 class DogsController < ApplicationController
-  before_action :set_dog, only: %i[show destroy]
+  before_action :set_dog, only: %i[destroy edit show update]
 
   def new
     @dog = Dog.new
@@ -20,6 +20,14 @@ class DogsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def edit
+  end
+
+  def update
+    @dog.update(dog_params) # Will raise ActiveModel::ForbiddenAttributesError
+    redirect_to dog_path(@dog)
   end
 
   def destroy

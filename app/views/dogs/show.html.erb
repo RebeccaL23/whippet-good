@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="dog-header">
+    <h1><%= @dog.name %></h1>
+    <%= link_to @dog.location, '/#map' %>, <%= @dog.breed %>
+  </div>
+  <div class="dog-details">
+    <div class="profile-left">
+      <%= image_tag @dog.photo_url, class: "dog-profile-pic" %>
+      <h4><%= @dog.description %></h4>
+      <div class="dog-owner">
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <%= @dog.user.first_name %>
+      </div>
+    </div>
+    <div class="profile-right">
+    </div>
+  </div>
+  <div id="map">
+    <%= @dog.location %>
+  </div>
+</div>

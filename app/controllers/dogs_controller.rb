@@ -1,4 +1,5 @@
 class DogsController < ApplicationController
+  before_action :set_dog, only: ["show"]
 
   def new
     @dog = Dog.new
@@ -6,6 +7,10 @@ class DogsController < ApplicationController
 
   def index
     @dogs = Dog.all
+  end
+
+  def show
+
   end
 
   def create
@@ -19,6 +24,10 @@ class DogsController < ApplicationController
   end
 
   private
+
+  def set_dog
+    @dog = Dog.find(params[:id])
+  end
 
   def dog_params
     params.require(:dog).permit(:name, :breed, :location, :description, :photo_url, :rate)

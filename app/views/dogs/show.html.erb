@@ -23,6 +23,14 @@
       </div>
     </div>
     <div class="profile-right">
+      <div class="booking-form" data-controller="dog-show" data-action="scroll@window->dog-show#fixed">
+      <h2>Make a booking</h2>
+        <%= simple_form_for [@dog, @booking] do |f| %>
+        <%= f.input :start, as: :date, html5: true %>
+        <%= f.input :end, as: :date, html5: true %>
+        <%= f.button :submit %>
+      </div>
+  <% end %>
     </div>
   </div>
   <div id="map">

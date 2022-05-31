@@ -3,6 +3,7 @@ class BookingsController < ApplicationController
   def new
     @dog = Dog.find(params[:dog_id])
     @booking = Booking.new
+
   end
 
   def create
@@ -11,6 +12,7 @@ class BookingsController < ApplicationController
     @booking.dog = @dog
     @booking.user = current_user
     @booking.save
+    raise
   end
 
   private

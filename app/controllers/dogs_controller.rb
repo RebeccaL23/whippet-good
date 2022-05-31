@@ -1,5 +1,5 @@
 class DogsController < ApplicationController
-  before_action :set_dog, only: ["show", "destroy"]
+  before_action :set_dog, only: %i[destroy edit show update]
 
   def new
     @dog = Dog.new
@@ -10,9 +10,7 @@ class DogsController < ApplicationController
   end
 
   def show
-  end
-
-  def destroy
+    @booking = Booking.new
   end
 
   def create
@@ -25,6 +23,19 @@ class DogsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    @dog.update(dog_params) # Will raise ActiveModel::ForbiddenAttributesError
+    redirect_to dog_path(@dog)
+  end
+
+  def destroy
+    @dog.destroy
+    redirect_to dogs_path, status: :see_other
+  end
+
   private
 
   def set_dog
@@ -34,4 +45,5 @@ class DogsController < ApplicationController
   def dog_params
     params.require(:dog).permit(:name, :breed, :location, :description, :photo_url, :rate)
   end
+
 end

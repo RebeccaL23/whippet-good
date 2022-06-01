@@ -1,7 +1,6 @@
 <%= @dogs.last.name %>
 <div class="container">
   <div class="cards">
-
   <% @dogs.each do |dog| %>
     <div class='card-component'>
       <%= link_to dog_path(dog) do %>

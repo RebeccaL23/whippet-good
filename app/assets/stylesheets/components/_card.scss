@@ -69,6 +69,49 @@
   margin-top: 8px;
 }
 
+.card-trip {
+  overflow: hidden;
+  background: white;
+  border-radius: 5px;
+
+}
+
+
+.card-trip-body img {
+  height: 200px;
+  width: 30%;
+  object-fit: cover;
+}
+
+.card-trip h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-trip p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-trip .card-trip-footer {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-trip-footer .card-trip-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
+
+
 .card-product .card-product-infos {
   padding: 16px;
 }

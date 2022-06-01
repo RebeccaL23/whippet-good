@@ -19,10 +19,12 @@
   align-items: center;
 
   p {
-    background-color: #d1edff;
-    padding: 4px 15px;
-    border-radius: 20px;
-    align-self: center;
+    mask-image: url(bone.svg);
+    mask-repeat: no-repeat;
+    background-color:#d1edff;
+    padding: 25px 7px;
+    // border-radius: 20px;
+    // align-self: center;
   }
 }
 

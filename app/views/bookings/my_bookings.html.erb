@@ -2,8 +2,6 @@
 
   <h1 class="text-center border-bottom py-2 mb-4">My Bookings</h1>
 
-
-
   <% @bookings.each do |book| %>
     <div class="card-product my-2">
 
@@ -21,18 +19,12 @@
           <%= book.dog.user.first_name %>
             <h4><%= book.id %></h4>
         </div>
-        <%= link_to booking_path(book), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-          <i class="fa-solid fa-trash-can"></i>
-        <% end %>
-
+          <%= link_to booking_path(book), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+            <i class="fa-solid fa-trash-can"></i>
+          <% end %>
       </div>
-      .
     </div>
   <% end %>
-
-
-
-
 
 </div>
 

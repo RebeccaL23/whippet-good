@@ -24,7 +24,7 @@
     </div>
 
     <div class="profile-right">
-      <% if @dog.user = current_user %>
+      <% if @dog.user == current_user %>
         <%= link_to edit_dog_path(@dog) do %>
           <i class="fa-solid fa-pen-to-square"></i>
         <% end %>

@@ -29,8 +29,10 @@
         <span class='dog-tags'>Sheds hair</span>
         <h4>Owner</h4>
         <div class="dog-owner">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <%= @dog.user.first_name %>
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= link_to user_path(@dog.user) do %>
+            <%= @dog.user.first_name %>
+          <% end %>
         </div>
       </div>
     </div>

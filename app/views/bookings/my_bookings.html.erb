@@ -15,8 +15,10 @@
           <p>from <strong><%= book.dog.location %></strong></p>
         </div>
         <div class="card-info-right d-flex align-items-center justify-content-between p-4">
-          <h2>Owner: </h2>
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", id:"dog-owner"  %><%= book.dog.user.first_name %>
+            <h2>Owner </h2>
+          <%= link_to user_path(book.dog.user) do %>
+           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", id:"dog-owner"  %><%= book.dog.user.first_name %>
+          <% end %>
         </div>
       </div>
     </div>

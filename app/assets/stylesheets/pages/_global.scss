@@ -4,7 +4,7 @@
   background-color: #fff;
 }
 
-form .btn{
+form .btn, .blue-pill-btn{
   background-color: #55AFE2;
   border-radius: 30px;
   color: #fff;
@@ -13,4 +13,8 @@ form .btn{
     color: #fff;
     opacity: 0.8;
   }
+}
+
+.blue-pill-btn {
+  padding: 8px 16px;
 }

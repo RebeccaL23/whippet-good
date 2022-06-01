@@ -46,7 +46,11 @@
           <%= simple_form_for [@dog, @booking] do |f| %>
           <%= f.input :start, as: :date, html5: true %>
           <%= f.input :end, as: :date, html5: true %>
-          <%= f.button :submit %>
+          <% if user_signed_in? %>
+            <%= f.button :submit %>
+          <% else %>
+              <%= link_to "Create a booking", new_user_session_path, class: "blue-pill-btn" %>
+          <% end %>
         </div>
       <% end %>
     </div>

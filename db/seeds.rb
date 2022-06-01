@@ -106,7 +106,7 @@ dog4 = Dog.new(
   location: "Lisbon",
   description: "gentle giant that farts a lot",
   photo_url: "https://images.unsplash.com/photo-1600369671608-7aad7dac5236?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8ZG9nfGVufDB8MnwwfHw%3D&auto=format&fit=crop&w=900&q=60",
-  rate: "10"
+  rate: "9"
 )
 dog4.user = user2
 dog4.save!
@@ -130,17 +130,17 @@ dog6 = Dog.new(
   location: "Caracas",
   description: "often runs away",
   photo_url: "https://images.unsplash.com/photo-1437957146754-f6377debe171?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c2hpdHp1fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60",
-  rate: "10"
+  rate: "7"
 )
 dog6.user = user3
 dog6.save!
 
 dog7 = Dog.new(
-  name: "Filomena",
-  breed: "Cocker Spaniel",
+  name: "Chica",
+  breed: "Whippet",
   location: "Caracas",
-  description: "tone deaf",
-  photo_url: "https://images.unsplash.com/photo-1515597849219-88a19d5f13f9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y29ja2V3ciUyMHNwYW5pZWx8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60",
+  description: "tone deaf, flatulence issues",
+  photo_url: "https://images.unsplash.com/photo-1521231517954-1d92f2e95399?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
   rate: "8"
 )
 dog7.user = user3
@@ -163,7 +163,7 @@ dog9 = Dog.new(
   location: "Caracas",
   description: "only understands Spanish",
   photo_url: "https://images.unsplash.com/photo-1550952080-c2c26881b9d9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDV8fGJsYWNrJTIwZG9nfGVufDB8MnwwfHw%3D&auto=format&fit=crop&w=900&q=60",
-  rate: "12"
+  rate: "8"
 )
 dog9.user = user3
 dog9.save!
@@ -187,7 +187,7 @@ dog11 = Dog.new(
   location: "Houston",
   description: "will walk you",
   photo_url: "https://images.unsplash.com/photo-1589391248100-0da9b7819dab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Z2VybWFuJTIwc2hlcGhlcmR8ZW58MHwyfDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60",
-  rate: "10"
+  rate: "3"
 )
 dog11.user = user4
 dog11.save!
@@ -198,7 +198,7 @@ dog12 = Dog.new(
   location: "Houston",
   description: "controversial opinions about Ukraine",
   photo_url: "https://images.unsplash.com/photo-1625564880755-e8458e31cc7b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NzR8fGRvZ3xlbnwwfDJ8MHx8&auto=format&fit=crop&w=900&q=60",
-  rate: "10"
+  rate: "2"
 )
 dog12.user = user4
 dog12.save!

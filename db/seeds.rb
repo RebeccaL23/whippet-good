@@ -6,6 +6,10 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+# in order of depedency, destroy then recreate
+Dog.destroy_all
+User.destroy_all
+
 puts 'creating 4 dog owners'
 
 user1 = User.new(

@@ -2,6 +2,22 @@
   border-radius:10px;
   width: 100%;
 }
+
+.icons {
+  position: absolute;
+  font-size: 22px;
+  top: 3%;
+  left: 87%;
+}
+
+.icons a {
+  text-decoration: none !important;
+  color: #55AFE2;
+}
+
+.icons a:hover {
+  opacity: 50%;
+}
 .profile-left{
   margin-right: 20px;
 }
@@ -10,9 +26,8 @@
   overflow: hidden;
 }
 .fixed-bookings{
-  width: 44%;
-  position: fixed;
-  top: 106px;
+  position: sticky;
+  top: 96px;
 }
 
 #circle-graphic{

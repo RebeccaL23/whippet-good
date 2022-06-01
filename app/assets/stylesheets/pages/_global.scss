@@ -1,10 +1,15 @@
+//body container to account for nav height
+.container {
+  margin-top: 110px;
+}
+
 // all form styling
 .form-select {
   border: #55AFE2 solid 1px;
   background-color: #fff;
 }
 
-form .btn{
+form .btn, .blue-pill-btn{
   background-color: #55AFE2;
   border-radius: 30px;
   color: #fff;
@@ -25,4 +30,15 @@ form .btn{
   &:hover{
     color: #126595;
   }
+}
+a {
+  text-decoration: none !important;
+  color: #55AFE2;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+.blue-pill-btn {
+  padding: 8px 16px;
 }

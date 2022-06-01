@@ -1,6 +1,23 @@
 .dog-profile-pic{
   border-radius:10px;
   width: 100%;
+  position: relative;
+}
+
+.icons {
+  position: absolute;
+  font-size: 22px;
+  top: 25%;
+  left: 46%;
+}
+
+.icons a {
+  text-decoration: none !important;
+  color: white;
+}
+
+.icons a:hover {
+  opacity: 50%;
 }
 
 .dog-details{

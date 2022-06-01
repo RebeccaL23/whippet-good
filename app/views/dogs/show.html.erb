@@ -6,6 +6,18 @@
   <div class="dog-details">
     <div class="profile-left">
       <%= image_tag @dog.photo_url, class: "dog-profile-pic" %>
+      <div class="icons">
+        <% if @dog.user == current_user %>
+          <%= link_to edit_dog_path(@dog) do %>
+            <i id="icon" class="fa-solid fa-pen-to-square"></i>
+          <% end %>
+
+          <%= link_to dog_path(@dog), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+            <i id="icon" class="fa-solid fa-trash-can"></i>
+          <% end %>
+        <% end %>
+      </div>
+
       <div class="profile-description">
         <h4>Description</h4>
         <p><%= @dog.description %></p>
@@ -24,15 +36,6 @@
     </div>
 
     <div class="profile-right">
-      <% if @dog.user == current_user %>
-        <%= link_to edit_dog_path(@dog) do %>
-          <i class="fa-solid fa-pen-to-square"></i>
-        <% end %>
-
-        <%= link_to dog_path(@dog), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-          <i class="fa-solid fa-trash-can"></i>
-        <% end %>
-      <% end %>
       <div class="booking-form" data-controller="dog-show" data-action="scroll@window->dog-show#fixed">
         <h2>Make a booking</h2>
           <%= simple_form_for [@dog, @booking] do |f| %>

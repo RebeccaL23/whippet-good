@@ -1,4 +1,15 @@
 <%= @dogs.last.name %>
+<div class="hero-banner">
+  <div class="container">
+    <h1 class='text-white'>Find cute dogs in your area</h1>
+    <% if user_signed_in? %>
+    <% else %>
+      <a class="yellow-pill-btn" href="/users/sign_up">Register</a>
+      <a class="yellow-pill-btn" href="/users/sign_in">Login</a>
+    <% end %>
+  </div>
+  </div>
+
 <div class="container">
   <div class="cards">
   <% @dogs.each do |dog| %>

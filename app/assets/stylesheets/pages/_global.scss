@@ -14,3 +14,15 @@ form .btn{
     opacity: 0.8;
   }
 }
+
+.yellow-pill-btn{
+  background-color: #fffed4;
+  border-radius: 30px;
+  text-decoration: none;
+  color: #55AFE2;
+  padding: 8px 24px;
+
+  &:hover{
+    color: #126595;
+  }
+}

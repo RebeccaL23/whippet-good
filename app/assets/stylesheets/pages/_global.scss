@@ -1,3 +1,8 @@
+//body container to account for nav height
+.container {
+  margin-top: 110px;
+}
+
 // all form styling
 .form-select {
   border: #55AFE2 solid 1px;
@@ -14,7 +19,13 @@ form .btn, .blue-pill-btn{
     opacity: 0.8;
   }
 }
+a {
+  text-decoration: none !important;
+  color: #55AFE2;
 
+  &:hover {
+    opacity: 0.8;
+  }
 .blue-pill-btn {
   padding: 8px 16px;
 }

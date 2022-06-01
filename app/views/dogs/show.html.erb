@@ -5,17 +5,20 @@
   </div>
   <div class="dog-details">
     <div class="profile-left">
-      <%= image_tag @dog.photo_url, class: "dog-profile-pic" %>
-      <div class="icons">
-        <% if @dog.user == current_user %>
-          <%= link_to edit_dog_path(@dog) do %>
-            <i id="icon" class="fa-solid fa-pen-to-square"></i>
-          <% end %>
+      <div class="dog-photo">
+        <div id="circle-graphic"></div>
+         <%= image_tag @dog.photo_url, class: "dog-profile-pic" %>
+        <div class="icons">
+          <% if @dog.user == current_user %>
+            <%= link_to edit_dog_path(@dog) do %>
+              <i id="icon" class="fa-solid fa-pen-to-square"></i>
+            <% end %>
 
-          <%= link_to dog_path(@dog), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-            <i id="icon" class="fa-solid fa-trash-can"></i>
+            <%= link_to dog_path(@dog), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+              <i id="icon" class="fa-solid fa-trash-can"></i>
+            <% end %>
           <% end %>
-        <% end %>
+        </div>
       </div>
 
       <div class="profile-description">
@@ -36,7 +39,7 @@
     </div>
 
     <div class="profile-right">
-      <div class="booking-form" data-controller="dog-show" data-action="scroll@window->dog-show#fixed">
+      <div class="booking-form" data-controller="dog_show" data-action="scroll@window->dog_show#scroll" data-search-target="form">
         <h2>Make a booking</h2>
           <%= simple_form_for [@dog, @booking] do |f| %>
           <%= f.input :start, as: :date, html5: true %>
@@ -48,6 +51,7 @@
   </div>
   <div id="map">
     <h3><%= @dog.name %> is based in <%=@dog.location%></h3>
+    <p>insert map</p>
     <%= @dog.location %>
   </div>
 </div>

@@ -8,22 +8,20 @@
       <%= link_to dog_path(book.dog) do %>
         <img src="<%= book.dog.photo_url %>" />
       <% end %>
-      <div class="card-product-infos d-flex justify-content-between align-items-center w-100">
-        <div class="card-info-left">
-          <h4><%= link_to book.dog.name, dog_path(book.dog) %></h4>
+      <div class="card-product-infos d-flex justify-content-between  w-100">
+        <div class="card-info-left align-items-center">
+          <h1><%= link_to book.dog.name, dog_path(book.dog) %></h1>
           <h2><%= book.start %> until <%= book.end %></h2>
-          <p><%= book.dog.description %></p>
+          <p>from <strong><%= book.dog.location %></strong></p>
         </div>
-        <div class="card-info-right">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", id:"dog-owner"  %>
-          <%= book.dog.user.first_name %>
-            <h4><%= book.id %></h4>
+        <div class="card-info-right d-flex align-items-center justify-content-between p-4">
+          <h2>Owner: </h2>
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", id:"dog-owner"  %><%= book.dog.user.first_name %>
         </div>
-          <%= link_to booking_path(book), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-            <i class="fa-solid fa-trash-can"></i>
-          <% end %>
       </div>
     </div>
   <% end %>
+
+
 
 </div>

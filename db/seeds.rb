@@ -253,44 +253,44 @@ dog.user = user5
 dog.save!
 
 dog = Dog.new(
-  name: "",
-  breed: "",
+  name: "Hans",
+  breed: "Dachshund",
   location: "Shoreditch",
   description: "complete crypto bro",
-  photo_url: "",
+  photo_url: "https://images.unsplash.com/photo-1641256979141-c643aba90d7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8ZGFjaHN1bmR8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60",
   rate: rand(1...10)
 )
 dog.user = user5
 dog.save!
 
 dog = Dog.new(
-  name: "",
-  breed: "",
+  name: "Karen",
+  breed: "Cocker Spaniel",
   location: "Shoreditch",
   description: "mother of thirty",
-  photo_url: "",
+  photo_url: "https://images.unsplash.com/photo-1588943211346-0908a1fb0b01?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fGZ1bm55JTIwZG9nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60",
   rate: rand(1...10)
 )
 dog.user = user5
 dog.save!
 
 dog = Dog.new(
-  name: "",
-  breed: "",
+  name: "El Diablo",
+  breed: "Jack Russell Terrier",
   location: "Shoreditch",
   description: "sponsored by Red Bull",
-  photo_url: "",
+  photo_url: "https://images.unsplash.com/photo-1597513901462-48cb0a4055f8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8amFjayUyMHJ1c3NlbHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60",
   rate: rand(1...10)
 )
 dog.user = user5
 dog.save!
 
 dog = Dog.new(
-  name: "",
-  breed: "",
+  name: "Frank",
+  breed: "Belgian Shepherd",
   location: "Shoreditch",
   description: "hits on dogs that are much younger",
-  photo_url: "",
+  photo_url: "https://images.unsplash.com/photo-1606391274526-7d13559df5e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fG9sZCUyMGRvZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60",
   rate: rand(1...10)
 )
 dog.user = user5
@@ -308,22 +308,22 @@ dog.user = user5
 dog.save!
 
 dog = Dog.new(
-  name: "",
-  breed: "",
+  name: "Schmidt",
+  breed: "Dobermann",
   location: "Shoreditch",
   description: "often seen with a thousand-yard stare",
-  photo_url: "",
+  photo_url: "https://images.unsplash.com/photo-1615347657696-0144a9249d9b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8ZG9iZXJtYW58ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60",
   rate: rand(1...10)
 )
 dog.user = user5
 dog.save!
 
 dog = Dog.new(
-  name: "",
-  breed: "",
+  name: "Momo",
+  breed: "Welsh Corgi",
   location: "Shoreditch",
   description: "former owner died, doesn't seem to like me very much",
-  photo_url: "",
+  photo_url: "https://images.unsplash.com/photo-1600077106724-946750eeaf3c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8d2Vsc2glMjBjb3JnaXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60",
   rate: rand(1...10)
 )
 dog.user = user5

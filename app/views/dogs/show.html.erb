@@ -41,7 +41,7 @@
     </div>
 
     <div class="profile-right">
-      <div class="booking-form" data-controller="dog_show" data-action="scroll@window->dog_show#scroll" data-search-target="form">
+      <div class="booking-form" data-controller="dog-show" data-action="scroll@window->dog-show#scroll" data-search-target="form">
         <h2>Make a booking</h2>
           <%= simple_form_for [@dog, @booking] do |f| %>
           <%= f.input :start, as: :date, html5: true %>
@@ -56,8 +56,10 @@
     </div>
   </div>
   <div id="map">
-    <h3><%= @dog.name %> is based in <%=@dog.location%></h3>
-    <p>insert map</p>
-    <%= @dog.location %>
+    <h3>Pick-up location is in <%=@dog.location%></h3><br>
+    <div style="width: 100%; height: 400px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
 </div>

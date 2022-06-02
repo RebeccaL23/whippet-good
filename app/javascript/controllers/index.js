@@ -13,6 +13,8 @@ application.register("dog-show", DogShowController)
 import HelloController from "./hello_controller.js"
 application.register("hello", HelloController)
 
+import MapController from "./map_controller.js"
+application.register("map", MapController)
+
 import SeeMoreController from "./see_more_controller.js"
 application.register("see-more", SeeMoreController)
-

@@ -24,6 +24,7 @@ class DogsController < ApplicationController
   def show
     @booking = Booking.new
     @markers = [{ lat: @dog.geocode[0], lng: @dog.geocode[1] }]
+    @reviews = @dog.reviews
     @dog.photo_url
   end
 

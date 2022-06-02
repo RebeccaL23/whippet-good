@@ -125,6 +125,21 @@
   margin-top: -5px;
 }
 
+.hidden {
+  display: none
+}
+
+span {
+  text-align: center;
+  color: #55AFE2;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+span:hover {
+  opacity: 80%;
+}
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {

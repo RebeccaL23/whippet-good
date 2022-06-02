@@ -229,7 +229,7 @@ dog.user = user4
 dog.save!
 
 dog = Dog.new(
-  name: "Lady Gaga",
+  name: "Lady",
   breed: "Husky",
   location: "Hackney",
   description: "run run run run run sleep run run run run run",
@@ -319,11 +319,11 @@ dog.user = user5
 dog.save!
 
 dog = Dog.new(
-  name: "",
-  breed: "",
+  name: "Apple",
+  breed: "Chihuahua",
   location: "Shoreditch",
   description: "constantly going on about how well travelled they are (🇯🇵 🇰🇷 🇩🇪 🇨🇳 🇺🇸 🇫🇷 🇪🇸 🇮🇹 🇷🇺 🇬🇧)",
-  photo_url: "",
+  photo_url: "https://images.unsplash.com/photo-1566793849773-e1375992cd59?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGNoaWh1YWh1YXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60",
   rate: rand(1...10)
 )
 dog.user = user5

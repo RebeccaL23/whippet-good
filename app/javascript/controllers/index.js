@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import BookingsController from "./bookings_controller.js"
+application.register("bookings", BookingsController)
+
 import DogShowController from "./dog_show_controller.js"
 application.register("dog-show", DogShowController)
 
@@ -12,3 +15,4 @@ application.register("hello", HelloController)
 
 import SeeMoreController from "./see_more_controller.js"
 application.register("see-more", SeeMoreController)
+

@@ -17,6 +17,11 @@
             </div>
             <p>Booked for <%= book.start %> until <%= book.end %></p>
           </div>
+          <% if book.approved %>
+            <button type="button" class="btn btn-success">Accepted!</button>
+          <% else %>
+            <button type="button" class="btn btn-danger">Not accepted</button>
+          <% end %>
           <div class="card-info-right p-4">
             <%= link_to user_path(book.dog.user) do %>
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", id:"dog-owner"  %><%= book.dog.user.first_name %>

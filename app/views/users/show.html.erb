@@ -15,6 +15,25 @@
           <p><%= dog.location %>
           <i class="fa-solid fa-paw"></i>
           <%= link_to "View details", dog_path(dog)  %>
+          <% if @user == current_user %>
+            <div class="bookings">
+              <h2>Bookings</h2>
+              <% dog.bookings.each do |book|%>
+                <p class="border-top pt-3">Booked for <%= book.start %> until <%= book.end %></p>
+                <div class="booking-info d-flex justify-content-between pb-3">
+                  <%= link_to user_path(book.user) do %>
+                    <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", id:"dog-owner"  %><%= book.user.first_name%>
+                  <% end %>
+                  <div class="div" data-controller="bookings" data-dog-id="<%= book.dog.id %>" data-booking-id="<%= book.id %>">
+                    <button type="button" class="btn btn-success" data-action="click->bookings#accept"
+                      data-bookings-target="accept_btn">Accept</button>
+                    <button type="button" class="btn btn-danger" data-action="click->bookings#decline"
+                      data-bookings-target="decline_btn">Decline</button>
+                  </div>
+                </div>
+            </div>
+          <% end %>
+          <% end %>
         </div>
       </div>
     <% end %>

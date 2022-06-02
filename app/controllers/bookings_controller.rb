@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_dog, only: %i[new create]
+  skip_before_action :verify_authenticity_token, only: %i[accept decline]
 
   def new
     @booking = Booking.new
@@ -16,6 +17,17 @@ class BookingsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+
+  def accept
+    @booking = Booking.find(params[:id])
+    @booking.update(approved: true)
+  end
+
+  def decline
+    @booking = Booking.find(params[:id])
+    @booking.update(approved: false)
+  end
+
 
   def destroy
     @booking = Booking.find(params[:id])

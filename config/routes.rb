@@ -8,9 +8,10 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   resources :dogs do
     resources :bookings, only: %i[new create]
+    post "bookings/:id/accept", to: "bookings#accept"
+    post "bookings/:id/decline", to: "bookings#decline"
   end
   resources :bookings, only: %i[destroy] # does no need to be within dog scope to delete a bookmark
   get "my_bookings", to: "bookings#my_bookings", as: :my_bookings
   # get "my_profile", to: "bookings#my_bookings", as: :my_profile
-
 end

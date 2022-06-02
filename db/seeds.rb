@@ -94,7 +94,7 @@ dog = Dog.new(
   name: "Bruno",
   breed: "Frenchie",
   location: "Westminster",
-  description: "people person but hates other dogs",
+  description: "was a Frenchie before it was cool",
   photo_url: "https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZG9nfGVufDB8MnwwfHw%3D&auto=format&fit=crop&w=900&q=60",
   rate: "5"
 )
@@ -242,10 +242,10 @@ dog.save!
 puts "#{user5.first_name} has 8 dogs"
 
 dog = Dog.new(
-  name: "",
+  name: "Paulo",
   breed: "Pug",
   location: "Shoreditch",
-  description: "",
+  description: "likes to bully larger dogs",
   photo_url: "https://images.unsplash.com/photo-1512356587788-4f5ad49c16e9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGRvZyUyMGJyZWVkfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60",
   rate: rand(1...10)
 )
@@ -256,7 +256,7 @@ dog = Dog.new(
   name: "",
   breed: "",
   location: "Shoreditch",
-  description: "",
+  description: "complete crypto bro",
   photo_url: "",
   rate: rand(1...10)
 )
@@ -267,7 +267,7 @@ dog = Dog.new(
   name: "",
   breed: "",
   location: "Shoreditch",
-  description: "",
+  description: "mother of thirty",
   photo_url: "",
   rate: rand(1...10)
 )
@@ -278,7 +278,7 @@ dog = Dog.new(
   name: "",
   breed: "",
   location: "Shoreditch",
-  description: "",
+  description: "sponsored by Red Bull",
   photo_url: "",
   rate: rand(1...10)
 )
@@ -289,7 +289,7 @@ dog = Dog.new(
   name: "",
   breed: "",
   location: "Shoreditch",
-  description: "",
+  description: "hits on dogs that are much younger",
   photo_url: "",
   rate: rand(1...10)
 )
@@ -300,7 +300,7 @@ dog = Dog.new(
   name: "",
   breed: "",
   location: "Shoreditch",
-  description: "",
+  description: "constantly going on about how well travelled they are (🇯🇵 🇰🇷 🇩🇪 🇨🇳 🇺🇸 🇫🇷 🇪🇸 🇮🇹 🇷🇺 🇬🇧)",
   photo_url: "",
   rate: rand(1...10)
 )
@@ -311,7 +311,7 @@ dog = Dog.new(
   name: "",
   breed: "",
   location: "Shoreditch",
-  description: "",
+  description: "often seen with a thousand-yard stare",
   photo_url: "",
   rate: rand(1...10)
 )
@@ -322,7 +322,7 @@ dog = Dog.new(
   name: "",
   breed: "",
   location: "Shoreditch",
-  description: "",
+  description: "former owner died, doesn't seem to like me very much",
   photo_url: "",
   rate: rand(1...10)
 )

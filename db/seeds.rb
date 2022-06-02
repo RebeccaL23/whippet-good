@@ -193,7 +193,7 @@ dog = Dog.new(
 dog.user = user3
 dog.save!
 
-puts "#{user4.first_name} has 5 dogs"
+puts "#{user4.first_name} has 6 dogs"
 
 dog = Dog.new(
   name: "Indiana",
@@ -234,6 +234,28 @@ dog = Dog.new(
   location: "Hackney",
   description: "run run run run run sleep run run run run run",
   photo_url: "https://images.unsplash.com/photo-1561297108-a47d55d96a19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGh1c2t5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60",
+  rate: rand(1...10)
+)
+dog.user = user4
+dog.save!
+
+dog = Dog.new(
+  name: "Ella",
+  breed: "Whippet",
+  location: "Hackney",
+  description: "alpha female",
+  photo_url: "https://images.unsplash.com/photo-1564067934826-445d6d4e22ed?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHdoaXBwZXR8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60",
+  rate: rand(1...10)
+)
+dog.user = user4
+dog.save!
+
+dog = Dog.new(
+  name: "Musashi",
+  breed: "Shiba Inu",
+  location: "Hackney",
+  description: "superiority complex",
+  photo_url: "https://images.unsplash.com/photo-1618173745201-8e3bf8978acc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c2hpYmElMjBpbnV8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60",
   rate: rand(1...10)
 )
 dog.user = user4

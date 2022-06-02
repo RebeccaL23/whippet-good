@@ -21,6 +21,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_02_102723) do
     t.datetime "updated_at", null: false
     t.bigint "dog_id", null: false
     t.bigint "user_id", null: false
+    t.boolean "approved", default: false
     t.index ["dog_id"], name: "index_bookings_on_dog_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end

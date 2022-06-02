@@ -12,7 +12,7 @@ class DogsController < ApplicationController
   def show
     @booking = Booking.new
     @markers = [{ lat: @dog.geocode[0], lng: @dog.geocode[1] }]
-    image_url = helpers.asset_url("wg-icon.png")
+    image_url = @dog.photo_url
   end
 
   def create

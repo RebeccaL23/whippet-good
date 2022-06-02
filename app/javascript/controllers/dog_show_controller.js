@@ -4,7 +4,7 @@ export default class extends Controller {
   static targets = ["form"];
 
   scroll() {
-    console.log(scroll)
+    // console.log(scroll)
 
     if (window.scrollY) {
       this.element.classList.add("fixed-bookings")

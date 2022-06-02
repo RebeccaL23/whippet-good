@@ -125,6 +125,28 @@
   margin-top: -5px;
 }
 
+.hidden {
+  display: none
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.my-btn {
+  // width: 50%;
+  border: none;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  &:hover {
+      opacity: 0.8;
+    }
+}
+
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {

@@ -6,13 +6,25 @@ class DogsController < ApplicationController
   end
 
   def index
-    @dogs = Dog.all
+    if params[:query].present?
+      @results = Dog.search_by_location_breed_and_user(params[:query])
+      @dogs = []
+      @results.each do |result|
+        @dogs << result
+      end
+      if @dogs.nil?
+        @dogs = Dog.all
+      end
+    else
+      @dogs = Dog.all
+      # Dog.order(created_at: :desc)
+    end
   end
 
   def show
     @booking = Booking.new
     @markers = [{ lat: @dog.geocode[0], lng: @dog.geocode[1] }]
-    image_url = @dog.photo_url
+    @dog.photo_url
   end
 
   def create

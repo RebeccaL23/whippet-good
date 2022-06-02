@@ -30,7 +30,10 @@
     <% end %>
 
     <br data-see-more-target="link">
-    <span data-action="click->see-more#reveal" data-see-more-target="link">See More...</span>
+
+    <div data-see-more-target="link">
+        <button type="button" class="yellow-pill-btn my-btn" data-action="click->see-more#reveal" data-see-more-target="link">See More...</button>
+    </div>
 
     <% @dogs.slice(12...).each do |dog| %>
     <div class='card-component hidden' data-see-more-target="card" >

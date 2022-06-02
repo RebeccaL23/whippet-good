@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :users, only: [:show]
   resources :dogs do
+    resources :reviews, only: %i[show index new create]
     resources :bookings, only: %i[new create]
     post "bookings/:id/accept", to: "bookings#accept"
     post "bookings/:id/decline", to: "bookings#decline"

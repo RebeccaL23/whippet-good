@@ -19,6 +19,7 @@
           </div>
           <% if book.approved %>
             <button type="button" class="btn btn-success">Accepted!</button>
+            <%= link_to "REVIEW" ,new_dog_review_path(book.dog) %>
           <% else %>
             <button type="button" class="btn btn-danger">Not accepted</button>
           <% end %>

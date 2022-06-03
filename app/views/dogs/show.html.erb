@@ -22,7 +22,7 @@
 
       <div class="profile-description">
         <h4>Description</h4>
-        <p><%= @dog.description %></p>
+        <p><%= @dog.description.capitalize + "." %></p>
         <span class='dog-tags'>Friendly</span>
         <span class='dog-tags'>Deaf</span>
         <span class='dog-tags'>Energetic</span>
@@ -33,7 +33,7 @@
         <div class="dog-owner">
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <%= link_to user_path(@dog.user) do %>
-            <%= @dog.user.first_name %>
+            <%= @dog.user.first_name.capitalize %>
           <% end %>
         </div>
       </div>
@@ -48,7 +48,7 @@
               <div class="dog-owner mb-2">
                 <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
                 <%= link_to user_path(@dog.user) do %>
-                  <%= @dog.user.first_name %>
+                  <%= @dog.user.first_name.capitalize %>
                 <% end %>
               </div>
               <button type="button" class="btn btn-light">

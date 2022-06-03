@@ -114,9 +114,9 @@
       <% end %>
     </div>
 
-    <% unless @dog.user == current_user  %>
       <div class="profile-right">
         <div class="booking-form" data-controller="dog-show" data-action="scroll@window->dog-show#scroll" data-search-target="form">
+    <% unless @dog.user == current_user  %>
           <h2 class="text-center">Make a booking</h2>
             <div class="booking-form-reviews d-flex justify-content-between border">
               <div class="reviews-left">
@@ -153,11 +153,32 @@
             <% end %>
             <div class="border-top my-2 pt-4 d-flex justify-content-center">
               <h3><strong><%= pluralize @dog.rate, "treat" %></strong>/day</h3>
+          <% end %>
             </div>
+      <% else %>
+        <h1><%= @dog.name %>'s Bookings</h1>
+        <div class="bookings">
+          <% @dog.bookings.each do |book|%>
+            <p class="border-top pt-3">Booked for <%= book.start %> until <%= book.end %></p>
+            <div class="booking-info d-flex justify-content-between pb-3">
+              <%= link_to user_path(book.user) do %>
+                <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", id:"dog-owner"  %><%= book.user.first_name%>
+              <% end %>
+              <div class="div" data-controller="bookings" data-dog-id="<%= book.dog.id %>" data-booking-id="<%= book.id %>">
+                <button type="button" class="accepted-btn" data-action="click->bookings#accept"
+                  data-bookings-target="accept_btn">Accept</button>
+                <button type="button" class="not-accepted-btn" data-action="click->bookings#decline"
+                  data-bookings-target="decline_btn">Decline</button>
+              </div>
+            </div>
+
+            </div>
+      <% end %>
+
+      <% end %>
           </div>
-        <% end %>
-      </div>
-    <% end %>
+    </div>
+
   </div>
 
   <div id="map">

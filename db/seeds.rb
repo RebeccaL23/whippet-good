@@ -348,7 +348,7 @@ dog = Dog.new(
   location: "Shoreditch",
   description: "former owner died, doesn't seem to like me very much",
   photo_url: "https://images.unsplash.com/photo-1600077106724-946750eeaf3c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8d2Vsc2glMjBjb3JnaXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60",
-  rate: rand(2...10)
+  rate: "2"
 )
 dog.user = user5
 dog.save!

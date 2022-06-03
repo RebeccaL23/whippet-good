@@ -208,6 +208,52 @@ dog = Dog.new(
 dog.user = user4
 dog.save!
 
+puts "creating 5 reviews for #{dog.name}!"
+
+users = [user1, user2, user3, user4, user6, user7]
+
+review = Review.new(
+  rating: rand(4..5),
+  content: "I had a great time with Indi; we went to the park to get some ice cream, to the lake for a swim and then we watched the sun go down over the heath ...",
+  user: users.sample,
+  dog: dog
+)
+review.save!
+
+review = Review.new(
+  rating: rand(4..5),
+  content: "At first I was afraid, I was petrified. But then he wagged his tail and I felt love inside. I rented him for so many nights but now he's gone, now I don't how I'll survive!",
+  user: users.sample,
+  dog: dog
+)
+review.save!
+
+review = Review.new(
+  rating: rand(4..5),
+  content: "Great dog, super cute, but sniffed my crotch a bit too much.",
+  user: users.sample,
+  dog: dog
+)
+review.save!
+
+review = Review.new(
+  rating: rand(4..5),
+  content: "Complete babe magnet. Would rent again",
+  user: users.sample,
+  dog: dog
+)
+review.save!
+
+review = Review.new(
+  rating: rand(4..5),
+  content: "OMG so cute!!! I could eat him alive I COULD EAT HIM ALIVE",
+  user: users.sample,
+  dog: dog
+)
+review.save!
+
+puts "#{Review.count} reviews created for #{dog.name}!"
+
 dog = Dog.new(
   name: "Pootie",
   breed: "Poodle",
@@ -342,55 +388,6 @@ dog = Dog.new(
 dog.user = user5
 dog.save!
 
-puts "creating 5 reviews for #{dog.name}!"
-
-users = [user1, user2, user3, user4, user6, user7]
-
-review = Review.new(
-  rating: rand(3..5),
-  content: "Just walked this yesterday. My husband and I were truly surprised,
-  as it was much deeper a dog than the page let onto.
-  It was, to me, a serious dog framed as a doggo.",
-  user: users.sample,
-  dog: dog
-)
-review.save!
-
-review = Review.new(
-  rating: rand(3..5),
-  content: "This is my doggo. There are many like it, but this one is mine.
-  My doggo is my best friend. It is my life. I must master it as I must master my life.",
-  user: users.sample,
-  dog: dog
-)
-review.save!
-
-review = Review.new(
-  rating: 1,
-  content: "Do not walk this dog! Far too sassy. Doesn't understand my accent.",
-  user: users.sample,
-  dog: dog
-)
-review.save!
-
-review = Review.new(
-  rating: rand(3..5),
-  content: "Stopped walking after 5 minutes; I had to carry it the rest of the way.",
-  user: users.sample,
-  dog: dog
-)
-review.save!
-
-review = Review.new(
-  rating: rand(3..5),
-  content: "Rarely made eye contact during conversations; I felt like they never really listened to me.",
-  user: users.sample,
-  dog: dog
-)
-review.save!
-
-puts "#{Review.count} reviews created for #{dog.name}!"
-
 dog = Dog.new(
   name: "Momo",
   breed: "Welsh Corgi",
@@ -409,7 +406,7 @@ puts "creating 5 reviews for #{dog.name}!"
 users = [user1, user2, user3, user4, user6, user7]
 
 review = Review.new(
-  rating: rand(3..5),
+  rating: rand(1..3),
   content: "Just walked this yesterday. My husband and I were truly surprised,
   as it was much deeper a dog than the page let onto.
   It was, to me, a serious dog framed as a doggo.",
@@ -419,7 +416,7 @@ review = Review.new(
 review.save!
 
 review = Review.new(
-  rating: rand(3..5),
+  rating: rand(1..3),
   content: "This is my doggo. There are many like it, but this one is mine.
   My doggo is my best friend. It is my life. I must master it as I must master my life.",
   user: users.sample,
@@ -429,14 +426,14 @@ review.save!
 
 review = Review.new(
   rating: 1,
-  content: "Do not walk this dog! Far too sassy. Doesn't understand my accent.",
+  content: "Do not borrow this dog! Far too sassy. Didn't understand my accent, dios mio",
   user: users.sample,
   dog: dog
 )
 review.save!
 
 review = Review.new(
-  rating: rand(3..5),
+  rating: rand(1..3),
   content: "Stopped walking after 5 minutes; I had to carry it the rest of the way.",
   user: users.sample,
   dog: dog
@@ -444,7 +441,7 @@ review = Review.new(
 review.save!
 
 review = Review.new(
-  rating: rand(3..5),
+  rating: rand(1..3),
   content: "Rarely made eye contact during conversations; I felt like they never really listened to me.",
   user: users.sample,
   dog: dog

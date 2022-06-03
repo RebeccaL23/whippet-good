@@ -7,9 +7,9 @@
   <div class="dog-details">
     <div class="profile-left">
       <div class='profile-left-top'>
-        <div class="dog-photo">
+        <div class="dog-photo" style="background-image:url(<%= @dog.photo_url%>)">
           <div class="circle-graphic"></div>
-          <%= image_tag @dog.photo_url, class: "dog-profile-pic" %>
+          <%# <%= image_tag @dog.photo_url, class: "dog-profile-pic" %>
           <div class="icons">
             <% if @dog.user == current_user %>
               <%= link_to edit_dog_path(@dog) do %>
@@ -31,6 +31,7 @@
           <span class='dog-tags'>Anxious</span>
           <span class='dog-tags'>Potty-trained</span>
           <span class='dog-tags'>Sheds hair</span>
+          <br>
           <h4>Owner</h4>
           <div class="dog-owner">
               <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>

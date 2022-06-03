@@ -50,7 +50,7 @@
     <% @dogs.sort_by { |el| -el[:id] }.slice(6...).each do |dog| %>
     <div class='card-component hidden' data-see-more-target="card" >
       <%= link_to dog_path(dog) do %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= dog.photo_url %>)"></div>
+        <div class="card-category" style="background-image: url(<%= dog.photo_url %>)"><div id='home-circle' class="circle-graphic"></div></div>
       <% end %>
       <div class='card-product-infos'>
         <div class="card-dog-heading">

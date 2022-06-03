@@ -1,4 +1,5 @@
-<div class="container pt-5">
+<div class="container">
+  <h1>Add a dog</h1>
   <%= simple_form_for @dog do |f| %>
     <%= f.input :name %>
     <%= f.input :breed, collection: %w[Pug Bulldog Dobermann Chihuahua Dachshund Whippet Husky Poodle Labrador] %>

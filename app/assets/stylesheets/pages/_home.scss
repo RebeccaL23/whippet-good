@@ -1,1 +1,24 @@
 // Specific CSS for your home-page
+.home-search{
+  margin: 10px 0px;
+  width: 40%;
+  border-radius: 25px;
+  background:#fff;
+  input:first-child{
+    border-radius: 25px;
+    border: none;
+    background: #fff;
+  }
+}
+.login-btn{
+  padding: 8px 50px !important;
+  color: #55AFE2 !important;
+}
+.search-box{
+  padding: 10px;
+
+}
+
+.search-submit{
+  border: none;
+}

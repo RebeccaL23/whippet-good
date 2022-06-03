@@ -6,7 +6,7 @@
   <div class="dog-details">
     <div class="profile-left">
       <div class="dog-photo">
-        <div id="circle-graphic"></div>
+        <div class="circle-graphic"></div>
          <%= image_tag @dog.photo_url, class: "dog-profile-pic" %>
         <div class="icons">
           <% if @dog.user == current_user %>

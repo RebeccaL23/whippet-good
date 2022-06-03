@@ -1,0 +1,50 @@
+// my_bookings
+.card-product{
+  margin-top: 8px;
+  a:first-child{
+    height: 100%
+  }
+}
+.not-accepted-btn{
+  border-radius: 20px;
+  padding: 6px 24px;
+  background-color: rgba(255, 110, 42, 0.7);
+  border: none;
+}
+
+.accepted-btn{
+  border-radius: 20px;
+  padding: 6px 24px;
+  background-color: rgba(84, 239, 100, 0.7);
+  border: none;
+}
+
+// booking confirmations
+.booking-heading-left{
+  display: flex;
+  #pending{
+    height: 32px;
+    border-radius: 20px;
+    padding: 3px 24px;
+    margin-left: 14px;
+    margin-top: 6px;
+    background-color: rgba(255, 110, 42, 0.7);
+  }
+}
+.booking-heading{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cards-booking {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 20px;
+
+
+  #map{
+    height: 100%;
+    margin: 0 !important;
+  }
+}

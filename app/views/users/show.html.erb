@@ -25,9 +25,9 @@
                     <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", id:"dog-owner"  %><%= book.user.first_name%>
                   <% end %>
                   <div class="div" data-controller="bookings" data-dog-id="<%= book.dog.id %>" data-booking-id="<%= book.id %>">
-                    <button type="button" class="btn btn-success" data-action="click->bookings#accept"
+                    <button type="button" class="accepted-btn" data-action="click->bookings#accept"
                       data-bookings-target="accept_btn">Accept</button>
-                    <button type="button" class="btn btn-danger" data-action="click->bookings#decline"
+                    <button type="button" class="not-accepted-btn" data-action="click->bookings#decline"
                       data-bookings-target="decline_btn">Decline</button>
                   </div>
                 </div>

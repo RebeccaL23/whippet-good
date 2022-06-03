@@ -74,12 +74,28 @@
   align-items: center;
   border-radius: 5px;
 }
+.review-buttons{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  border-right: #eee 1px solid;
+  padding-right: 8px;
+  a{
+    margin-top: 4px !important;
+  }
+  #dog-owner{
+    margin-top: 7px;
+  }
+}
 
 .card-product p{
   line-height: 16px;
 }
 .card-info-right{
   display: flex;
+
 
   img{
     margin-right: 8px;

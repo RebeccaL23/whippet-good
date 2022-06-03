@@ -1,9 +1,8 @@
 <div class="container">
-
-  <h1 class="text-center border-bottom py-2 mb-4">My Bookings</h1>
+  <h1 class="text-center border-bottom py-2 mb-4">Booking confirmation</h1>
 
   <% @bookings.each do |book| %>
-    <div class="card-product my-2 py-2">
+    <div class="card-product">
       <%= link_to dog_path(book.dog) do %>
         <img src="<%= book.dog.photo_url %>" />
       <% end %>
@@ -17,13 +16,18 @@
             </div>
             <p>Booked for <%= book.start %> until <%= book.end %></p>
           </div>
-          <% if book.approved %>
-            <button type="button" class="btn btn-success">Accepted!</button>
-            <%= link_to "REVIEW" ,new_dog_review_path(book.dog) %>
-          <% else %>
-            <button type="button" class="btn btn-danger">Not accepted</button>
-          <% end %>
           <div class="card-info-right p-4">
+          <% if book.approved %>
+            <div class='review-buttons' >
+              <button type="button" class="accepted-btn">Accepted</button>
+              <%= link_to "Leave a review", new_dog_review_path(book.dog) %>
+            </div>
+          <% else %>
+            <div class='review-buttons'>
+              <button type="button" class="not-accepted-btn">Pending</button>
+            </div>
+          <% end %>
+
             <%= link_to user_path(book.dog.user) do %>
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", id:"dog-owner"  %><%= book.dog.user.first_name %>
           <% end %>
@@ -31,7 +35,5 @@
       </div>
     </div>
   <% end %>
-
-
 
 </div>

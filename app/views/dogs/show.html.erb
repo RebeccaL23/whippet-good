@@ -43,43 +43,11 @@
 
       <br>
 
-      <h3 class='review-headings'>Recent reviews</h3>
-      <div class='recent-reviews'>
-        <% @reviews.sort_by { |el| -el[:id] }.first(3).each do |review| %>
-        <div class="review-card">
-          <% if review.rating == 5 %>
-            <i class="fa-solid fa-star" style='color:#55AFE2'></i>
-            <i class="fa-solid fa-star" style='color:#55AFE2'></i>
-            <i class="fa-solid fa-star" style='color:#55AFE2'></i>
-            <i class="fa-solid fa-star" style='color:#55AFE2'></i>
-            <i class="fa-solid fa-star" style='color:#55AFE2'></i>
-          <% elsif review.rating == 4 %>
-            <i class="fa-solid fa-star" style='color:#55AFE2'></i>
-            <i class="fa-solid fa-star" style='color:#55AFE2'></i>
-            <i class="fa-solid fa-star" style='color:#55AFE2'></i>
-            <i class="fa-solid fa-star" style='color:#55AFE2'></i>
-          <% elsif review.rating == 3 %>
-            <i class="fa-solid fa-star" style='color:#55AFE2'></i>
-            <i class="fa-solid fa-star" style='color:#55AFE2'></i>
-            <i class="fa-solid fa-star" style='color:#55AFE2'></i>
-          <% elsif review.rating == 2 %>
-            <i class="fa-solid fa-star" style='color:#55AFE2'></i>
-            <i class="fa-solid fa-star" style='color:#55AFE2'></i>
-          <% elsif review.rating == 1 %>
-            <i class="fa-solid fa-star" style='color:#55AFE2'></i>
-          <% end %>
-          <p id='review-content'><%= review.content %></p>
-          <p id='review-author'>– <%= review.user.first_name %></p>
-        </div>
-        <% end %>
-      </div>
-
-      <br>
-
-      <h4 class='review-headings'>All other reviews</h4>
-      <div class='all-reviews'>
-        <% @reviews.sort_by { |el| -el[:id] }.slice(3...).each do |review| %>
-          <div class="review-list">
+      <% if @dog.reviews.present? %>
+        <h3 class='review-headings'>Recent reviews</h3>
+        <div class='recent-reviews'>
+          <% @reviews.sort_by { |el| -el[:id] }.first(3).each do |review| %>
+          <div class="review-card">
             <% if review.rating == 5 %>
               <i class="fa-solid fa-star" style='color:#55AFE2'></i>
               <i class="fa-solid fa-star" style='color:#55AFE2'></i>
@@ -103,11 +71,45 @@
             <% end %>
             <p id='review-content'><%= review.content %></p>
             <p id='review-author'>– <%= review.user.first_name %></p>
-            <hr>
           </div>
+          <% end %>
+        </div>
 
-        <% end %>
-      </div>
+        <br>
+
+        <h4 class='review-headings'>All other reviews</h4>
+        <div class='all-reviews'>
+          <% @reviews.sort_by { |el| -el[:id] }.slice(3...).each do |review| %>
+            <div class="review-list">
+              <% if review.rating == 5 %>
+                <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+                <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+                <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+                <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+                <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+              <% elsif review.rating == 4 %>
+                <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+                <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+                <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+                <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+              <% elsif review.rating == 3 %>
+                <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+                <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+                <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+              <% elsif review.rating == 2 %>
+                <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+                <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+              <% elsif review.rating == 1 %>
+                <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+              <% end %>
+              <p id='review-content'><%= review.content %></p>
+              <p id='review-author'>– <%= review.user.first_name %></p>
+              <hr>
+            </div>
+
+          <% end %>
+        </div>
+      <% end %>
     </div>
 
     <div class="profile-right">

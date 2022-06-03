@@ -35,7 +35,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  h3{
+    padding-bottom: 8px;
+  }
+  i{
+    padding-bottom: 18px;
+  }
   p {
     mask-image: url(bone.svg);
     // mask-size: 100px;

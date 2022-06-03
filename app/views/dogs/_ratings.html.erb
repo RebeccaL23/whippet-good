@@ -1,0 +1,31 @@
+<% if review.rating == 5 %>
+            <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+            <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+            <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+            <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+            <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+          <% elsif review.rating == 4 %>
+            <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+            <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+            <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+            <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+            <i class="fa-solid fa-star" style='color:#fffed4'></i>
+          <% elsif review.rating == 3 %>
+            <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+            <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+            <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+            <i class="fa-solid fa-star" style='color:#fffed4'></i>
+            <i class="fa-solid fa-star" style='color:#fffed4'></i>
+          <% elsif review.rating == 2 %>
+            <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+            <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+            <i class="fa-solid fa-star" style='color:#fffed4'></i>
+            <i class="fa-solid fa-star" style='color:#fffed4'></i>
+            <i class="fa-solid fa-star" style='color:#fffed4'></i>
+          <% elsif review.rating == 1 %>
+            <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+            <i class="fa-solid fa-star" style='color:#fffed4'></i>
+            <i class="fa-solid fa-star" style='color:#fffed4'></i>
+            <i class="fa-solid fa-star" style='color:#fffed4'></i>
+            <i class="fa-solid fa-star" style='color:#fffed4'></i>
+          <% end %>

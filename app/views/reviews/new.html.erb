@@ -1,4 +1,5 @@
-<div class="container pt-5">
+<div class="container">
+  <h1>Leave a review</h1>
   <%= simple_form_for [@dog, @review] do |f| %>
     <%= f.input :rating, collection: 1..5 %>
     <%= f.input :content %>

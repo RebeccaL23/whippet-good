@@ -3,42 +3,114 @@
     <h1><%= @dog.name %></h1>
     <h4><%= @dog.breed %>, <%= @dog.location %></h4>
   </div>
+
   <div class="dog-details">
     <div class="profile-left">
-      <div class="dog-photo">
-        <div class="circle-graphic"></div>
-         <%= image_tag @dog.photo_url, class: "dog-profile-pic" %>
-        <div class="icons">
-          <% if @dog.user == current_user %>
-            <%= link_to edit_dog_path(@dog) do %>
-              <i id="icon" class="fa-solid fa-pen-to-square"></i>
+      <div class='profile-left-top'>
+        <div class="dog-photo">
+          <div class="circle-graphic"></div>
+          <%= image_tag @dog.photo_url, class: "dog-profile-pic" %>
+          <div class="icons">
+            <% if @dog.user == current_user %>
+              <%= link_to edit_dog_path(@dog) do %>
+                <i id="icon" class="fa-solid fa-pen-to-square"></i>
+              <% end %>
+              <%= link_to dog_path(@dog), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                <i id="icon" class="fa-solid fa-trash-can"></i>
+              <% end %>
             <% end %>
-            <%= link_to dog_path(@dog), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-              <i id="icon" class="fa-solid fa-trash-can"></i>
+          </div>
+        </div>
+
+        <div class="profile-description">
+          <h4>Description</h4>
+          <p><%= @dog.description %></p>
+          <span class='dog-tags'>Friendly</span>
+          <span class='dog-tags'>Deaf</span>
+          <span class='dog-tags'>Energetic</span>
+          <span class='dog-tags'>Anxious</span>
+          <span class='dog-tags'>Potty-trained</span>
+          <span class='dog-tags'>Sheds hair</span>
+          <h4>Owner</h4>
+          <div class="dog-owner">
+              <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= link_to user_path(@dog.user) do %>
+              <%= @dog.user.first_name %>
             <% end %>
-          <% end %>
+          </div>
         </div>
       </div>
 
-      <div class="profile-description">
-        <h4>Description</h4>
-        <p><%= @dog.description %></p>
-        <span class='dog-tags'>Friendly</span>
-        <span class='dog-tags'>Deaf</span>
-        <span class='dog-tags'>Energetic</span>
-        <span class='dog-tags'>Anxious</span>
-        <span class='dog-tags'>Potty-trained</span>
-        <span class='dog-tags'>Sheds hair</span>
-        <h4>Owner</h4>
-        <div class="dog-owner">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <%= link_to user_path(@dog.user) do %>
-            <%= @dog.user.first_name %>
+      <br>
+
+      <% if @dog.reviews.present? %>
+        <h3 class='review-headings'>Recent reviews</h3>
+        <div class='recent-reviews'>
+          <% @reviews.sort_by { |el| -el[:id] }.first(3).each do |review| %>
+          <div class="review-card">
+            <% if review.rating == 5 %>
+              <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+              <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+              <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+              <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+              <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+            <% elsif review.rating == 4 %>
+              <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+              <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+              <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+              <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+            <% elsif review.rating == 3 %>
+              <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+              <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+              <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+            <% elsif review.rating == 2 %>
+              <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+              <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+            <% elsif review.rating == 1 %>
+              <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+            <% end %>
+            <p id='review-content'><%= review.content %></p>
+            <p id='review-author'>– <%= review.user.first_name %></p>
+          </div>
           <% end %>
         </div>
-      </div>
+
+        <br>
+
+        <h4 class='review-headings'>All other reviews</h4>
+        <div class='all-reviews'>
+          <% @reviews.sort_by { |el| -el[:id] }.slice(3...).each do |review| %>
+            <div class="review-list">
+              <% if review.rating == 5 %>
+                <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+                <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+                <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+                <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+                <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+              <% elsif review.rating == 4 %>
+                <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+                <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+                <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+                <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+              <% elsif review.rating == 3 %>
+                <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+                <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+                <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+              <% elsif review.rating == 2 %>
+                <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+                <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+              <% elsif review.rating == 1 %>
+                <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+              <% end %>
+              <p id='review-content'><%= review.content %></p>
+              <p id='review-author'>– <%= review.user.first_name %></p>
+              <hr>
+            </div>
+
+          <% end %>
+        </div>
+      <% end %>
     </div>
-
 
     <div class="profile-right">
       <div class="booking-form" data-controller="dog-show" data-action="scroll@window->dog-show#scroll" data-search-target="form">
@@ -80,14 +152,7 @@
     </div>
   </div>
 
-  <div class='recent-reviews'>
-        <% @reviews.each do |review| %>
-        <div class="review-card">
-          <h2><%= review.rating %></h2>
-          <p><%= review.content %></p>
-        </div>
-        <% end %>
-      </div>
+
 
   <div id="map">
     <h3>Pick-up location is in <%=@dog.location%></h3><br>

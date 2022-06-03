@@ -5,20 +5,28 @@
       <div class='card-product-infos'>
         <div class="card-dog-heading">
           <h2><%= @dog.name %></h2>
+                      <%= link_to user_path(@booking.dog.user) do %>
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", id:"dog-owner"  %><%= @dog.user.first_name %>
+            <% end %>
           <p><%= @dog.rate %> treats</p>
         </div>
         <p><%= @dog.location %>
         <i class="fa-solid fa-paw"></i>
         <%= link_to "View details", dog_path(@dog)  %>
+        <button type="button" class="btn btn-danger">Pending</button>
+        <p>Booked from <%= @booking.start %> until <%= @booking.end %></p>
       </div>
     </div>
   </div>
 
-  <div id="map">
+  <h3><%= link_to "My Bookings", my_bookings_path, class: "nav-link" %></h3>
+
+    <div id="map">
     <h3>Pick-up location is in <%=@dog.location%></h3><br>
     <div style="width: 100%; height: 400px;"
     data-controller="map"
     data-map-markers-value="<%= @markers.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
+
 </div>

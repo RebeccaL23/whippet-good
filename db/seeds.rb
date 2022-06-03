@@ -426,7 +426,7 @@ review.save!
 
 review = Review.new(
   rating: 1,
-  content: "Do not borrow this dog! Far too sassy. Didn't understand my accent, dios mio",
+  content: "Do not borrow this dog! Far too sassy. Dios mio",
   user: users.sample,
   dog: dog
 )

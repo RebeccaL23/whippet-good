@@ -146,14 +146,12 @@
               <%= link_to "Confirm Booking", new_user_session_path, class: "btn btn-light" %>
           <% end %>
           <div class="border-top my-2 pt-4 d-flex justify-content-center">
-            <h3><strong><%= @dog.rate %></strong> treats/day</h3>
+            <h3><strong><%= pluralize @dog.rate, "treat" %></strong>/day</h3>
           </div>
         </div>
       <% end %>
     </div>
   </div>
-
-
 
   <div id="map">
     <h3>Pick-up location is in <%=@dog.location%></h3><br>

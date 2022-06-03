@@ -28,8 +28,8 @@
         <% end %>
         <div class='card-product-infos'>
           <div class="card-dog-heading">
-            <h2><%= dog.name.capitalize %></h2>
-            <p><%= dog.rate %> treats</p>
+            <h3><%= dog.name.capitalize %></h3>
+            <p><%= pluralize dog.rate, 'treat'%></p>
           </div>
           <p><%= dog.location %>
           <i class="fa-solid fa-paw"></i>

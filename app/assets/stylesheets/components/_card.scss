@@ -11,6 +11,24 @@
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  position: relative;
+}
+.card-category:hover #home-circle{
+  transition-timing-function: ease;
+  -webkit-transition-duration: 0.3s;
+  -webkit-transition-property: all;
+  -webkit-transition-timing-function: ease-in-out;
+  width: 200%;
+  height: 200%;
+  border-radius: 50%;
+  top: -50%;
+  left: -50%;
+}
+
+#home-circle{
+  top: 60%;
+  left: -70%;
 }
 
 .card-dog-heading{

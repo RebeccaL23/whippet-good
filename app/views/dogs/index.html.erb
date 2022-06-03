@@ -24,7 +24,7 @@
     <% @dogs.sort_by { |el| -el[:id] }.first(6).each do |dog| %>
       <div class='card-component'>
         <%= link_to dog_path(dog) do %>
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= dog.photo_url %>)"></div>
+          <div class="card-category" style="background-image: url(<%= dog.photo_url %>)"></div>
         <% end %>
         <div class='card-product-infos'>
           <div class="card-dog-heading">

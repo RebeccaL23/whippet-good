@@ -31,6 +31,7 @@ class BookingsController < ApplicationController
   def confirmation
     @booking = Booking.find(params[:booking_id])
     @dog = Dog.find(params[:dog_id])
+    @markers = [{ lat: @dog.geocode[0], lng: @dog.geocode[1] }]
   end
 
   def destroy

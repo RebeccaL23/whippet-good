@@ -112,15 +112,35 @@
 
     <div class="profile-right">
       <div class="booking-form" data-controller="dog-show" data-action="scroll@window->dog-show#scroll" data-search-target="form">
-        <h2>Make a booking</h2>
+        <h2 class="text-center">Make a booking</h2>
+          <div class="booking-form-reviews d-flex justify-content-between border">
+            <div class="reviews-left">
+              <div class="dog-owner mb-2">
+                <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                <%= link_to user_path(@dog.user) do %>
+                  <%= @dog.user.first_name %>
+                <% end %>
+              </div>
+              <button type="button" class="btn btn-light">
+                Contact Owner
+              </button>
+            </div>
+            <div class="reviews-right">
+              <p><strong><%= @dog.reviews.count %></strong> Reviews</p>
+              <p><strong><%= @dog.reviews.first.rating %></strong> stars</p>
+            </div>
+          </div>
           <%= simple_form_for [@dog, @booking] do |f| %>
           <%= f.input :start, as: :date, html5: true %>
           <%= f.input :end, as: :date, html5: true %>
           <% if user_signed_in? %>
-            <%= f.button :submit %>
+            <%= f.submit 'Confirm Booking', class: "btn btn-light d-grid gap-2" %>
           <% else %>
-              <%= link_to "Create a booking", new_user_session_path, class: "blue-pill-btn" %>
+              <%= link_to "Confirm Booking", new_user_session_path, class: "btn btn-light" %>
           <% end %>
+          <div class="border-top my-2 pt-4 d-flex justify-content-center">
+            <h3><strong><%= @dog.rate %></strong> treats/day</h3>
+          </div>
         </div>
       <% end %>
     </div>

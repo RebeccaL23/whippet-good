@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
     @booking.dog = @dog
     @booking.user = current_user
     if @booking.save
-      redirect_to my_bookings_path, notice: 'You just made a booking'
+      redirect_to dog_booking_confirmation_path(@booking.dog, @booking.id), notice: 'You just made a booking'
     else
       render :new, status: :unprocessable_entity
     end
@@ -28,6 +28,10 @@ class BookingsController < ApplicationController
     @booking.update(approved: false)
   end
 
+  def confirmation
+    @booking = Booking.find(params[:booking_id])
+    @dog = Dog.find(params[:dog_id])
+  end
 
   def destroy
     @booking = Booking.find(params[:id])

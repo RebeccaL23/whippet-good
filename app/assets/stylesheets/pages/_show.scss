@@ -1,6 +1,7 @@
 .dog-profile-pic{
   border-radius:10px;
-  width: 100%;
+  height: 100%;
+
 }
 
 .icons {
@@ -21,9 +22,19 @@
 .profile-left{
   margin-right: 20px;
 }
+.profile-left-top{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.profile-description{
+  padding: 40px;
+}
 .dog-photo{
   position: relative;
   overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
 }
 .fixed-bookings{
   position: sticky;
@@ -52,14 +63,12 @@
   margin: 50px 0;
 }
 
-.profile-description{
+.profile-left-top{
   background: #fff;
-  padding: 40px;
-  margin-top: -16px;
-  border-radius: 0 0 10px 10px;
-  h4{
-    margin-top: 16px;
-  }
+  border-radius: 10px;
+  // h4{
+  //   margin-top: 16px;
+  // }
 }
 .booking-form{
   border-radius: 5px;

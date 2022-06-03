@@ -133,7 +133,11 @@
               <div class="reviews-right">
                 <% if @dog.reviews.present? %>
                   <p><strong><%= @dog.reviews.count %></strong> Reviews</p>
-                  <p><strong><%= @dog.reviews.first.rating %></strong> stars</p>
+                  <% average = 0 %>
+                  <% @dog.reviews.each do |review| %>
+                    <% average += review.rating %>
+                   <% end %>
+                  <p><strong><%= average / @dog.reviews.count %></strong><i class="fa-solid fa-star" style='color:#55AFE2'></i></p>
                 <% else %>
                   <p><strong>0</strong> Reviews</p>
                 <% end %>

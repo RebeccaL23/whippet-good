@@ -28,13 +28,32 @@
         <% end %>
         <div class='card-product-infos'>
           <div class="card-dog-heading">
-            <h3><%= dog.name.capitalize %></h3>
+            <h3 class="pe-3"><%= dog.name.capitalize %></h3>
+            <div class="card-dog-rating">
+                  <% if dog.reviews.present? %>
+                  <% average = 0 %>
+                  <% dog.reviews.each do |review| %>
+                    <% average += review.rating %>
+                  <% end %>
+                    <% rating = average / dog.reviews.count %>
+                    <% rating.times do %>
+                      <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+                    <% end %>
+                <% else %>
+                  <% 5.times do %>
+                      <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+                    <% end %>
+                <% end %>
+            </div>
             <p><%= pluralize dog.rate, 'treat'%></p>
+          </div>
+          <div>
           </div>
           <p><%= dog.location %>
           <i class="fa-solid fa-paw"></i>
-          <%= link_to "View details", dog_path(dog)  %>
+          <%= link_to "View details", dog_path(dog) %>
         </div>
+
       </div>
     <% end %>
 
@@ -54,9 +73,25 @@
       <% end %>
       <div class='card-product-infos'>
         <div class="card-dog-heading">
-          <h2><%= dog.name.capitalize %></h2>
-          <p><%= dog.rate %> treats</p>
-        </div>
+            <h3 class="pe-3"><%= dog.name.capitalize %></h3>
+            <div class="card-dog-rating">
+                  <% if dog.reviews.present? %>
+                  <% average = 0 %>
+                  <% dog.reviews.each do |review| %>
+                    <% average += review.rating %>
+                  <% end %>
+                    <% rating = average / dog.reviews.count %>
+                    <% rating.times do %>
+                      <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+                    <% end %>
+                <% else %>
+                  <% rand(3..5).times do %>
+                      <i class="fa-solid fa-star" style='color:#55AFE2'></i>
+                    <% end %>
+                <% end %>
+            </div>
+            <p><%= pluralize dog.rate, 'treat'%></p>
+          </div>
         <p><%= dog.location %>
         <i class="fa-solid fa-paw"></i>
         <%= link_to "View details", dog_path(dog)  %>

@@ -1,7 +1,7 @@
 <div class="container pt-5">
   <%= simple_form_for @dog do |f| %>
     <%= f.input :name %>
-    <%= f.input :breed %>
+    <%= f.input :breed, collection: %w[Pug Bulldog Dobermann Chihuahua Dachshund Whippet Husky Poodle Labrador] %>
     <%= f.input :location %>
     <%= f.input :description %>
     <%= f.input :photo_url %>

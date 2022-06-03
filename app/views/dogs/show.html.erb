@@ -128,15 +128,19 @@
               </button>
             </div>
             <div class="reviews-right">
-              <p><strong><%= @dog.reviews.count %></strong> Reviews</p>
-              <p><strong><%= @dog.reviews.first.rating %></strong> stars</p>
+              <% if @dog.reviews.present? %>
+                <p><strong><%= @dog.reviews.count %></strong> Reviews</p>
+                <p><strong><%= @dog.reviews.first.rating %></strong> stars</p>
+              <% else %>
+                <p><strong>0</strong> Reviews</p>
+              <% end %>
             </div>
           </div>
           <%= simple_form_for [@dog, @booking] do |f| %>
           <%= f.input :start, as: :date, html5: true %>
           <%= f.input :end, as: :date, html5: true %>
           <% if user_signed_in? %>
-            <%= f.submit 'Confirm Booking', class: "btn btn-light d-grid gap-2" %>
+            <%= f.submit 'Confirm Booking', class: "btn btn-light align-items-center" %>
           <% else %>
               <%= link_to "Confirm Booking", new_user_session_path, class: "btn btn-light" %>
           <% end %>

@@ -42,7 +42,20 @@ Whippet Good is an AirBnB clone, but instead of lending and renting apartments w
 
 ### Cool Features
 
-Coming soon!
+**See more** dogs:
+<p align="center">
+<img src="https://github.com/adrianHards/whippet-good/blob/master/demo/seemore.gif" alt="search gif" width="500">
+</p>
+
+**Search** by dog name, owner name and location:
+<p align="center">
+<img src="https://github.com/adrianHards/whippet-good/blob/master/demo/search.gif" alt="search gif" width="500">
+</p>
+
+Accept or deny pending **bookings**:
+<p align="center">
+<img src="https://github.com/adrianHards/whippet-good/blob/master/demo/bookings.gif" alt="search gif" width="500">
+</p>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
